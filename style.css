@@ -119,6 +119,16 @@ h2 {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+/* Totales */
+.recibo-total {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.recibo-total p {
+  margin: 5px 0;
+  font-weight: bold;
+}
 
 #calculadora {
   margin-top: 30px;
