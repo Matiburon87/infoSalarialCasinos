@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desglose de Ítems Salariales</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Desglose de Ítems Salariales</h1>
+      <p>Explora los diferentes ítems salariales y sus fundamentos legales.</p>
+    </header>
+
+    <main>
+      <!-- Sección de Ítems Salariales -->
+      <section id="items-salariales">
+        <h2>Ítems Salariales</h2>
+        <div class="item">
+          <button
+            class="item-button"
+            onclick="toggleDetails('asignacion-categoria')"
+          >
+            Asignación de la Categoría
+          </button>
+          <div id="asignacion-categoria" class="details">
+            <p>
+              <strong>Descripción:</strong> Este ítem corresponde a la
+              asignación básica según la categoría del empleado.
+            </p>
+            <p><strong>Fundamento Legal:</strong> Decreto 2601/08.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button
+            class="item-button"
+            onclick="toggleDetails('suplemento-subrogancia')"
+          >
+            Suplemento por Subrogancia
+          </button>
+          <div id="suplemento-subrogancia" class="details">
+            <p>
+              <strong>Descripción:</strong> Pago adicional por cubrir un puesto
+              de mayor responsabilidad temporalmente.
+            </p>
+            <p><strong>Fundamento Legal:</strong> Decreto 1436/04.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button
+            class="item-button"
+            onclick="toggleDetails('decreto-1431')"
+          >
+            Decreto 1431/09
+          </button>
+          <div id="decreto-1431" class="details">
+            <p>
+              <strong>Descripción:</strong> ****
+            </p>
+            <p><strong>Fundamento Legal:</strong> Decreto 1431/09.</p>
+          </div>
+        </div>
+
+
+        <div class="item">
+          <button class="item-button" onclick="toggleDetails('propina')">
+            Propina
+          </button>
+          <div id="propina" class="details">
+            <p>
+              <strong>Descripción:</strong> Pago adicional recibido por
+              propinas.
+            </p>
+            <p><strong>Fundamento Legal:</strong> Ley 20.744.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button
+            class="item-button"
+            onclick="toggleDetails('compensacion-productividad')"
+          >
+            Compensación por Productividad de Máquinas Tragamonedas
+          </button>
+          <div id="compensacion-productividad" class="details">
+            <p>
+              <strong>Descripción:</strong> Pago adicional por productividad en
+              el manejo de máquinas tragamonedas.
+            </p>
+            <p>
+              <strong>Fundamento Legal:</strong> Convenio Colectivo de Trabajo.
+            </p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button class="item-button" onclick="toggleDetails('horas-extras')">
+            Horas Extras
+          </button>
+          <div id="horas-extras" class="details">
+            <p>
+              <strong>Descripción:</strong> Pago adicional por horas trabajadas
+              fuera del horario normal.
+            </p>
+            <p><strong>Fundamento Legal:</strong> Ley 20.744.</p>
+          </div>
+        </div>
+      </section>
+      <!-- Sección de Muestra del Recibo -->
+      <section id="muestra-recibo">
+        <h2>Muestra de Recibo de Sueldo</h2>
+        <div class="recibo-container">
+          <div class="recibo">
+            <h3>RECIBO DE HABERES</h3>
+            
+            <div class="recibo-info">
+              <div class="info-item"><strong>Programa:</strong> CASINO MAR DEL PLATA</div>
+              <div class="info-item"><strong>Régimen Horario:</strong> TEMPORARIO/PLANTA</div>
+              <div class="info-item"><strong>Destino/Partida:</strong> PRG-00003 ACT-02</div>
+              <div class="info-item"><strong>Código de Encasillamiento:</strong> 18-0013-I-19</div>
+              <div class="info-item"><strong>CUIL:</strong> **-********-*</div>
+              <div class="info-item"><strong>Legajo:</strong> *****</div>
+              <div class="info-item"><strong>Nombre:</strong> Apellido y Nombres</div>
+            </div>
+
+
+            <!-- Columnas de Haberes y Descuentos -->
+      <div class="recibo-columnas">
+        <!-- Columna de Haberes -->
+        <div class="columna-haberes">
+              <h4>HABERES</h4>
+              <ul>
+                <li>Asignación de la Categoría (24)</li>
+                <li>Suplemento por Subrogacia (31)</li>
+                <li>Asignación por Título (24)</li>
+                <li>Permanencia en la Categoría</li>
+                <li>Antigüedad AL 3% (x años trabajados)</li>
+                <li>Bonificación Remunerativa 10% (Básico + Subrogancia)</li>
+                <li>Garantia Salarial Sin Aportes</li>
+                <li>Bonificación Decreto 1436/04</li>
+                <li>Subrogacia Decreto 1436/04</li>
+                <li>Bonificación Remunerativa Decreto 1431/09 (24)</li>
+                <li>
+                  Bonificación Remunerativa Personal Juego (37% de la propina
+                  mes anterior)
+                </li>
+                <li>Horas Extras</li>
+              </ul>
+            </div>
+
+              <!-- Columna de Descuentos -->
+        <div class="columna-descuentos">
+              <h4>DESCUENTOS</h4>
+              <ul>
+                <li>Previsionales (Aporte Personal 14%)</li>
+                <li>Obra Social (I.O.M.A. 4,1%)</li>
+                <li>Seguro de Vida Obligatorio</li>
+                <li>Impuesto a las Ganancias(solo para pocos)</li>
+                <li>Cuota Societaria (A.E.C. 4%)</li>
+                <li>A.P.A.N.D. (Cuota Afiliatoria 1%)</li>
+                <li>Puede haber mas membresias, otros gremios, etc...</li>
+              </ul>
+            </div>
+            <div class="recibo-total">
+              <p><strong>Total Haberes:</strong> [Sueldo en bruto]</p>
+              <p><strong>Total Descuentos:</strong> [23,1%]</p>
+              <p><strong>Neto a Pagar:</strong> [Sueldo de Bolsillo]</p>
+              <p><strong>Aumentos:</strong> [% paritario en algunos ítems]</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Sección de Calculadora de Aumentos de Sueldo -->
+      <section id="calculadora">
+        <h2>Calculadora de Aumentos de Sueldo</h2>
+        <form id="salaryCalculator">
+          <label for="currentSalary">Sueldo Actual:</label>
+          <input type="number" id="currentSalary" name="currentSalary" placeholder="asignacion-categoria, + suplemento-subrogancia, +bonif-remunerativa 10%, + Decreto 1431 " required>
+          
+          <label for="increasePercentage">Porcentaje de Aumento:</label>
+          <input type="number" id="increasePercentage" name="increasePercentage" placeholder="Ej: 5.5" required>
+
+         
+
+          <button type="button" onclick="calculateNewSalary()">Calcular</button>
+        </form>
+        <p id="result-bruto"></p>
+        <p id="result-bolsillo"></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Desglose de Ítems Salariales. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
