@@ -93,20 +93,36 @@ h2 {
   display: flex;
   gap: 20px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
-.columna-haberes, .columna-descuentos {
+.columna-haberes, .columna-descuentos, .recibo-total {
   flex: 1;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  background-color: #fff;
+  min-width: 250px;
 }
 
-.columna-haberes h4, .columna-descuentos h4 {
+.columna-haberes h4, .columna-descuentos h4, .recibo-total h4 {
   color: #007BFF;
   margin-bottom: 10px;
+  text-align: center;
 }
 
+.recibo-total {
+  text-align: left;
+  margin-top: 0;
+}
+
+.recibo-total p {
+  margin: 8px 0;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
 .columna-haberes ul, .columna-descuentos ul {
   list-style-type: none;
   padding: 0;
