@@ -5,17 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Desglose de Ítems Salariales</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- Librería Chart.js para gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">InfoSalarial</div>
+        <ul class="nav-links">
+          <li><a href="#items-salariales">Ítems Salariales</a></li>
+          <li><a href="#muestra-recibo">Muestra de Recibo</a></li>
+          <li><a href="#calculadora-lateral">Calculadora de Aumentos</a></li>
+          <li><a href="#tabla-ripte">Índice RIPTE</a></li>
+          <li><a href="https://alquiler.com" target="_blank">Alquiler.com</a></li>
+        </ul>
+      </div>
+    </nav>
+    
     <header>
       <h1>Desglose de Ítems Salariales</h1>
       <p>Explora los diferentes ítems salariales y sus fundamentos legales.</p>
     </header>
 
     <main>
-      <!-- Sección de Ítems Salariales -->
-      <section id="items-salariales">
-        <h2>Ítems Salariales</h2>
+      <!-- Sección de Ítems Salariales y Gráfico -->
+      <div class="items-container">
+        <section id="items-salariales">
+          <h2>Ítems Salariales</h2>
         <div class="item">
           <button
             class="item-button"
@@ -108,7 +124,24 @@
             <p><strong>Fundamento Legal:</strong> Ley 20.744.</p>
           </div>
         </div>
-      </section>
+        </section>
+        
+        <!-- Calculadora de Aumentos de Sueldo (movida al lado de Ítems Salariales) -->
+        <section id="calculadora-lateral">
+          <h2>Calculadora de Aumentos de Sueldo</h2>
+          <form id="salaryCalculator">
+            <label for="currentSalary">Sueldo Actual:</label>
+            <input type="number" id="currentSalary" name="currentSalary" placeholder="asignacion-categoria, + suplemento-subrogancia, +bonif-remunerativa 10%, + Decreto 1431 " required>
+            
+            <label for="increasePercentage">Porcentaje de Aumento:</label>
+            <input type="number" id="increasePercentage" name="increasePercentage" placeholder="Ej: 5.5" required>
+
+            <button type="button" onclick="calculateNewSalary()">Calcular</button>
+          </form>
+          <p id="result-bruto"></p>
+          <p id="result-bolsillo"></p>
+        </section>
+      </div>
       <!-- Sección de Muestra del Recibo -->
       <section id="muestra-recibo">
         <h2>Muestra de Recibo de Sueldo</h2>
@@ -173,22 +206,44 @@
           </div>
         </div>
       </section>
-      <!-- Sección de Calculadora de Aumentos de Sueldo -->
-      <section id="calculadora">
-        <h2>Calculadora de Aumentos de Sueldo</h2>
-        <form id="salaryCalculator">
-          <label for="currentSalary">Sueldo Actual:</label>
-          <input type="number" id="currentSalary" name="currentSalary" placeholder="asignacion-categoria, + suplemento-subrogancia, +bonif-remunerativa 10%, + Decreto 1431 " required>
-          
-          <label for="increasePercentage">Porcentaje de Aumento:</label>
-          <input type="number" id="increasePercentage" name="increasePercentage" placeholder="Ej: 5.5" required>
+      <!-- Gráfico de barras con % de modificación anual (movido donde estaba la calculadora) -->
+      <section id="grafico-modificacion">
+        <h2>Modificación Anual RIPTE (%)</h2>
+        <div class="chart-container">
+          <canvas id="ripteChart"></canvas>
+        </div>
+      </section>
 
-         
-
-          <button type="button" onclick="calculateNewSalary()">Calcular</button>
-        </form>
-        <p id="result-bruto"></p>
-        <p id="result-bolsillo"></p>
+      <!-- Sección de Tabla RIPTE -->
+      <section id="tabla-ripte">
+        <h2>Índice RIPTE - Remuneración Imponible Promedio de Trabajadores Estables</h2>
+        <p>El índice RIPTE (Remuneración Imponible Promedio de los Trabajadores Estables) es un indicador salarial de naturaleza previsional que mide la remuneración promedio sujeta a aportes al Sistema Integrado Previsional Argentino (SIPA).</p>
+        
+        <div class="tabla-container">
+          <table id="tabla-ripte-valores">
+            <thead>
+              <tr>
+                <th>Año</th>
+                <th>Enero</th>
+                <th>Febrero</th>
+                <th>Marzo</th>
+                <th>Abril</th>
+                <th>Mayo</th>
+                <th>Junio</th>
+                <th>Julio</th>
+                <th>Agosto</th>
+                <th>Septiembre</th>
+                <th>Octubre</th>
+                <th>Noviembre</th>
+                <th>Diciembre</th>
+                <th>Var. Anual (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Los datos se cargarán desde JavaScript -->
+            </tbody>
+          </table>
+        </div>
       </section>
     </main>
 

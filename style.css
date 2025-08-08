@@ -1,3 +1,75 @@
+/* Estilos para el menú de navegación fijo */
+.navbar {
+  background-color: #089582;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 15px 0;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 10px;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos responsive para el menú */
+@media screen and (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav-links li {
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .nav-links a {
+    padding: 10px;
+  }
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -9,16 +81,25 @@ body {
 header {
   background-color: #089582;
   color: white;
-  padding: 20px;
+  padding: 40px 20px;
   text-align: center;
+  margin-top: 0;
 }
 
 main {
   padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 h2 {
   color: #089582;
+  grid-column: span 8;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .item {
@@ -48,9 +129,30 @@ h2 {
   margin-top: 5px;
 }
 
+/* Estilos para la sección de Items Salariales */
+.items-container {
+  grid-column: span 8;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 20px;
+}
+
+#items-salariales {
+  grid-column: span 4;
+}
+
+#calculadora-lateral {
+  grid-column: span 4;
+}
+
 /* Estilos para la sección de muestra del recibo */
 #muestra-recibo {
   margin-top: 30px;
+  grid-column: span 8;
+}
+
+#grafico-modificacion, #tabla-ripte {
+  grid-column: span 8;
 }
 
 .recibo-container {
@@ -127,6 +229,10 @@ h2 {
   list-style-type: none;
   padding: 0;
 }
+.columna-descuentos ul{
+  color: rgb(209, 37, 37);
+
+}
 
 .columna-haberes ul li, .columna-descuentos ul li {
   background-color: #f9f9f9;
@@ -148,6 +254,7 @@ h2 {
 
 #calculadora {
   margin-top: 30px;
+  grid-column: span 8;
 }
 
 #salaryCalculator {
@@ -190,6 +297,45 @@ h2 {
 }
 
 /* Estilos para el footer */
+/* Estilos para el gráfico de barras */
+.chart-container {
+  width: 100%;
+  height: 300px;
+  margin: 20px 0;
+}
+
+/* Estilos para la tabla RIPTE */
+.tabla-container {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+#tabla-ripte-valores {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+#tabla-ripte-valores th, #tabla-ripte-valores td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+#tabla-ripte-valores th {
+  background-color: #f2f2f2;
+  position: sticky;
+  top: 0;
+}
+
+#tabla-ripte-valores tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#tabla-ripte-valores tr:hover {
+  background-color: #f1f1f1;
+}
+
 footer {
   background-color: #333;
   color: white;
